@@ -3547,7 +3547,7 @@ pub const TYPABLE_COMMAND_LIST: &[TypableCommand] = &[
     TypableCommand {
         name: "show-directory-stack",
         aliases: &[],
-        doc: "Show the directory stack as a <space> delimited string.",
+        doc: "Show the directory stack with spaces between paths.",
         fun: show_directory_stack,
         completer: CommandCompleter::none(),
         signature: Signature {
