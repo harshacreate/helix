@@ -40,7 +40,7 @@ The parsing of the command line has been rewritten and now supports flags and ex
 
 Features:
 
-Add a picker which explores directories ([#11285](https://github.com/helix-editor/helix/pull/11285), [d4aed40](https://github.com/helix-editor/helix/commit/d4aed40))
+Add a picker which explores directories ([#11285](https://github.com/helix-editor/helix/pull/11285), d4aed40)
 
 Allow cycling through multiple LSP Hover responses with `A-n`/`A-p` ([#10122](https://github.com/helix-editor/helix/pull/10122), [2367b20](https://github.com/helix-editor/helix/commit/2367b20))
 
@@ -48,11 +48,11 @@ Add support for incomplete LSP completions ([5c1f3f8](https://github.com/helix-e
 
 Add support for EditorConfig ([#13056](https://github.com/helix-editor/helix/pull/13056), [#13443](https://github.com/helix-editor/helix/pull/13443))
 
-Add support for LSP document colors ([#12308](https://github.com/helix-editor/helix/pull/12308), [d43de14](https://github.com/helix-editor/helix/commit/d43de14), [47cdd23](https://github.com/helix-editor/helix/commit/47cdd23), [ba54b6a](https://github.com/helix-editor/helix/commit/ba54b6a), [#13188](https://github.com/helix-editor/helix/pull/13188))
+Add support for LSP document colors ([#12308](https://github.com/helix-editor/helix/pull/12308), [d43de14](https://github.com/helix-editor/helix/commit/d43de14), [47cdd23](https://github.com/helix-editor/helix/commit/47cdd23), ba54b6a, [#13188](https://github.com/helix-editor/helix/pull/13188))
 
 Support expansions in external formatter arguments ([#13429](https://github.com/helix-editor/helix/pull/13429))
 
-Switch out the highlighter for the `tree-house` crate ([#12972](https://github.com/helix-editor/helix/pull/12972), [09bc67a](https://github.com/helix-editor/helix/commit/09bc67a), [a7c3a43](https://github.com/helix-editor/helix/commit/a7c3a43), [3ceae88](https://github.com/helix-editor/helix/commit/3ceae88), [05ae617](https://github.com/helix-editor/helix/commit/05ae617), [5a1dcc2](https://github.com/helix-editor/helix/commit/5a1dcc2), [ebf96bd](https://github.com/helix-editor/helix/commit/ebf96bd), [#13644](https://github.com/helix-editor/helix/pull/13644), [b1f4717](https://github.com/helix-editor/helix/commit/b1f4717), [7410fe3](https://github.com/helix-editor/helix/commit/7410fe3), [633c5fb](https://github.com/helix-editor/helix/commit/633c5fb), [362e97e](https://github.com/helix-editor/helix/commit/362e97e), [#13828](https://github.com/helix-editor/helix/pull/13828), [6fd1efd](https://github.com/helix-editor/helix/commit/6fd1efd))
+Switch out the highlighter for the `tree-house` crate ([#12972](https://github.com/helix-editor/helix/pull/12972), [09bc67a](https://github.com/helix-editor/helix/commit/09bc67a), [a7c3a43](https://github.com/helix-editor/helix/commit/a7c3a43), [3ceae88](https://github.com/helix-editor/helix/commit/3ceae88), [05ae617](https://github.com/helix-editor/helix/commit/05ae617), [5a1dcc2](https://github.com/helix-editor/helix/commit/5a1dcc2), ebf96bd, [#13644](https://github.com/helix-editor/helix/pull/13644), [b1f4717](https://github.com/helix-editor/helix/commit/b1f4717), [7410fe3](https://github.com/helix-editor/helix/commit/7410fe3), [633c5fb](https://github.com/helix-editor/helix/commit/633c5fb), [362e97e](https://github.com/helix-editor/helix/commit/362e97e), [#13828](https://github.com/helix-editor/helix/pull/13828), [6fd1efd](https://github.com/helix-editor/helix/commit/6fd1efd))
 
     * This fixes a number of highlighter bugs.
     * Locals like parameter highlights are now highlighted even when the definition is not in view.
@@ -397,7 +397,7 @@ Recognize `xsl` as XML ([#12834](https://github.com/helix-editor/helix/pull/1283
 
 Remove deprecated `typst-lsp` config ([5a66270](https://github.com/helix-editor/helix/commit/5a66270))
 
-Replace `pkgbuild-language-server` with `termux-language-server` ([c3c9a0d](https://github.com/helix-editor/helix/commit/c3c9a0d))
+Replace `pkgbuild-language-server` with `termux-language-server` (c3c9a0d)
 
 Update SQL highlights ([#12837](https://github.com/helix-editor/helix/pull/12837))
 
@@ -626,7 +626,7 @@ Highlight JSX attributes as `@attribute` ([#12416](https://github.com/helix-edit
 
 Improve markdown heading highlights ([#12417](https://github.com/helix-editor/helix/pull/12417))
 
-Add comment tokens configuration for JSONC ([b26903c](https://github.com/helix-editor/helix/commit/b26903c))
+Add comment tokens configuration for JSONC (b26903c)
 
 Highlight the never type `!` as a type in Rust ([#12485](https://github.com/helix-editor/helix/pull/12485))
 
@@ -1086,7 +1086,7 @@ Commands:
 
 `select_all_siblings` (`A-a`) - select all siblings of each selection ([87c4161](https://github.com/helix-editor/helix/commit/87c4161))
 
-`select_all_children` (`A-I`) - select all children of each selection ([fa67c5c](https://github.com/helix-editor/helix/commit/fa67c5c))
+`select_all_children` (`A-I`) - select all children of each selection (fa67c5c)
 
 `:read` - insert the contents of the given file at each selection ([#10447](https://github.com/helix-editor/helix/pull/10447))
 
@@ -1657,7 +1657,7 @@ Update catppuccin themes ([#9859](https://github.com/helix-editor/helix/pull/985
 
 Update `rasmus` ([#9939](https://github.com/helix-editor/helix/pull/9939))
 
-Update `dark_plus` ([#9949](https://github.com/helix-editor/helix/pull/9949), [628dcd5](https://github.com/helix-editor/helix/commit/628dcd5))
+Update `dark_plus` ([#9949](https://github.com/helix-editor/helix/pull/9949), 628dcd5)
 
 Update gruvbox themes ([#9960](https://github.com/helix-editor/helix/pull/9960))
 
@@ -1827,7 +1827,7 @@ Recognize `zon` as Zig ([#9582](https://github.com/helix-editor/helix/pull/9582)
 
 Add a formatter for Odin ([#9537](https://github.com/helix-editor/helix/pull/9537))
 
-Update tree-sitter-erlang ([#9627](https://github.com/helix-editor/helix/pull/9627), [fdcd461](https://github.com/helix-editor/helix/commit/fdcd461))
+Update tree-sitter-erlang ([#9627](https://github.com/helix-editor/helix/pull/9627), fdcd461)
 
 Capture Rust fields as argument textobjects ([#9637](https://github.com/helix-editor/helix/pull/9637))
 
@@ -1871,7 +1871,7 @@ Add textobjects queries for Vala ([#8541](https://github.com/helix-editor/helix/
 
 Update tree-sitter-git-config ([9610254](https://github.com/helix-editor/helix/commit/9610254))
 
-Recognize 'mmd' as Mermaid ([459eb9a](https://github.com/helix-editor/helix/commit/459eb9a))
+Recognize 'mmd' as Mermaid (459eb9a)
 
 Highlight Rust extern crate aliases ([c099dde](https://github.com/helix-editor/helix/commit/c099dde))
 
@@ -2703,7 +2703,7 @@ Add exit code to failed command message ([#5898](https://github.com/helix-editor
 
 Make `m` textobject look for pairs enclosing selections ([#3344](https://github.com/helix-editor/helix/pull/3344))
 
-Negotiate LSP position encoding ([#5894](https://github.com/helix-editor/helix/pull/5894), [a48d1a4](https://github.com/helix-editor/helix/commit/a48d1a4))
+Negotiate LSP position encoding ([#5894](https://github.com/helix-editor/helix/pull/5894), a48d1a4)
 
 Display deprecated LSP completions with strikethrough ([#5932](https://github.com/helix-editor/helix/pull/5932))
 
@@ -2731,7 +2731,7 @@ Show diagnostic codes in LSP diagnostic messages ([#6378](https://github.com/hel
 
 Highlight the current line in a DAP debug session ([#5957](https://github.com/helix-editor/helix/pull/5957))
 
-Hide signature help if it overlaps with the completion menu ([#5523](https://github.com/helix-editor/helix/pull/5523), [7a69c40](https://github.com/helix-editor/helix/commit/7a69c40))
+Hide signature help if it overlaps with the completion menu ([#5523](https://github.com/helix-editor/helix/pull/5523), 7a69c40)
 
 Fixes:
 
@@ -3175,7 +3175,7 @@ Add default rulers and reflow config for git commit messages ([#3738](https://gi
 
 Improve grammar fetching and building output ([#3773](https://github.com/helix-editor/helix/pull/3773))
 
-Add a `text` language to language completion ([cc47d3f](https://github.com/helix-editor/helix/commit/cc47d3f))
+Add a `text` language to language completion (cc47d3f)
 
 Improve error handling for `:set-language` ([e8add6f](https://github.com/helix-editor/helix/commit/e8add6f))
 
@@ -3852,7 +3852,7 @@ Fix process spawning error handling ([#3349](https://github.com/helix-editor/hel
 
 Don't resolve links for `:o` completion ([8a4fbf6](https://github.com/helix-editor/helix/commit/8a4fbf6))
 
-Recalculate completion after pasting into prompt ([e77b7d1](https://github.com/helix-editor/helix/commit/e77b7d1))
+Recalculate completion after pasting into prompt (e77b7d1)
 
 Fix extra selections with regex anchors ([#3598](https://github.com/helix-editor/helix/pull/3598))
 
@@ -4092,7 +4092,7 @@ Fix Rust textobjects ([#3590](https://github.com/helix-editor/helix/pull/3590))
 
 C ([00d88e5](https://github.com/helix-editor/helix/commit/00d88e5))
 
-Update Rust ([0ef0ef9](https://github.com/helix-editor/helix/commit/0ef0ef9))
+Update Rust (0ef0ef9)
 
 Packaging:
 
@@ -4154,7 +4154,7 @@ Command for picking files from the current working directory (`Space-F`) ([#1600
 
 `:write!` which creates non-existent subdirectories ([#1839](https://github.com/helix-editor/helix/pull/1839))
 
-Add `m` textobject that selects closest surrounding pair ([de15d70](https://github.com/helix-editor/helix/commit/de15d70), [76175db](https://github.com/helix-editor/helix/commit/76175db))
+Add `m` textobject that selects closest surrounding pair ([de15d70](https://github.com/helix-editor/helix/commit/de15d70), 76175db)
 
 `:pipe` typable command for piping selections ([#1972](https://github.com/helix-editor/helix/pull/1972))
 
@@ -4182,7 +4182,7 @@ Usability improvements and fixes:
 
 Handle broken pipes when piping `hx --health` through `head` ([#1876](https://github.com/helix-editor/helix/pull/1876))
 
-Fix for `copy_selection` on newlines ([ab7885e](https://github.com/helix-editor/helix/commit/ab7885e), [236c6b7](https://github.com/helix-editor/helix/commit/236c6b7))
+Fix for `copy_selection` on newlines ([ab7885e](https://github.com/helix-editor/helix/commit/ab7885e), 236c6b7)
 
 Use `win32yank` clipboard provider on WSL2 ([#1912](https://github.com/helix-editor/helix/pull/1912))
 
@@ -4455,7 +4455,7 @@ Experimental Debug Adapter Protocol (DAP) support ([#574](https://github.com/hel
 
 Primary cursor shape may now be customized per mode ([#1154](https://github.com/helix-editor/helix/pull/1154))
 
-Overhaul incremental highlights and enable combined injections ([`6728344..4080341`](https://github.com/helix-editor/helix/compare/6728344..4080341))
+Overhaul incremental highlights and enable combined injections (`6728344..4080341`)
 
 Allow specifying file start position ([#445](https://github.com/helix-editor/helix/pull/445), [#1676](https://github.com/helix-editor/helix/pull/1676))
 
@@ -4857,7 +4857,7 @@ Implement key ordering for info box ([#952](https://github.com/helix-editor/heli
 LSP:
 Implement MarkedString rendering ([`e128a8702`](https://github.com/helix-editor/helix/commit/e128a8702))
 
-Don't panic if init fails ([`d31bef7`](https://github.com/helix-editor/helix/commit/d31bef7))
+Don't panic if init fails (`d31bef7`)
 
 Configurable diagnostic severity ([#1325](https://github.com/helix-editor/helix/pull/1325))
 
