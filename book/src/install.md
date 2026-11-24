@@ -4,10 +4,12 @@ The typical way to install Helix is via [your operating system's package manager
 
 Note that:
 
-- To get the latest nightly version of Helix, you need to
+To get the latest nightly version of Helix, you need to
+
   [build from source](./building-from-source.md).
 
-- To take full advantage of Helix, install the language servers for your
+To take full advantage of Helix, install the language servers for your
+
   preferred programming languages. See the
   [wiki](https://github.com/helix-editor/helix/wiki/Language-Server-Configurations)
   for instructions.

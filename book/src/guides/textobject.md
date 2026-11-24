@@ -14,22 +14,34 @@ for example).
 
 The following [captures][tree-sitter-captures] are recognized:
 
-| Capture Name       |
-| ---                |
-| `function.inside`  |
-| `function.around`  |
-| `class.inside`     |
-| `class.around`     |
-| `test.inside`      |
-| `test.around`      |
-| `parameter.inside` |
-| `parameter.around` |
-| `comment.inside`   |
-| `comment.around`   |
-| `entry.inside`     |
-| `entry.around`     |
-| `xml-element.inside` |
-| `xml-element.around` |
+Capture Name: `function.inside`
+
+Capture Name: `function.around`
+
+Capture Name: `class.inside`
+
+Capture Name: `class.around`
+
+Capture Name: `test.inside`
+
+Capture Name: `test.around`
+
+Capture Name: `parameter.inside`
+
+Capture Name: `parameter.around`
+
+Capture Name: `comment.inside`
+
+Capture Name: `comment.around`
+
+Capture Name: `entry.inside`
+
+Capture Name: `entry.around`
+
+Capture Name: `xml-element.inside`
+
+Capture Name: `xml-element.around`
+
 
 [Example query files][textobject-examples] can be found in the helix GitHub repository.
 
@@ -38,9 +50,11 @@ The following [captures][tree-sitter-captures] are recognized:
 Tree-sitter based navigation in Helix is done using captures in the
 following order:
 
-- `object.movement`
-- `object.around`
-- `object.inside`
+`object.movement`
+
+`object.around`
+
+`object.inside`
 
 For example if a `function.around` capture has been already defined for a language
 in its `textobjects.scm` file, function navigation should also work automatically.

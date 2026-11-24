@@ -2,10 +2,11 @@
 
 To override global configuration parameters, create a `config.toml` file located in your config directory:
 
-- Linux and Mac: `~/.config/helix/config.toml`
-- Windows: `%AppData%\helix\config.toml`
+Linux and Mac: `~/.config/helix/config.toml`
 
-> 💡 You can easily open the config file by typing `:config-open` within Helix normal mode.
+Windows: `%AppData%\helix\config.toml`
+
+💡 You can easily open the config file by typing `:config-open` within Helix normal mode.
 
 Example config:
 
@@ -32,4 +33,3 @@ signal to the Helix process, such as by using the command `pkill -USR1 hx`.
 
 Finally, you can have a `config.toml` and a `languages.toml` local to a project by putting it under a `.helix` directory in your repository.
 Its settings will be merged with the configuration directory and the built-in configuration.
-

@@ -6,16 +6,19 @@ available in the future).
 
 There are three kinds of commands that can be used in keymaps:
 
-* Static commands: commands like `move_char_right` which are usually bound to
+Static commands: commands like `move_char_right` which are usually bound to
+
   keys and used for movement and editing. A list of static commands is
   available in the [Keymap](./keymap.md) documentation and in the source code
   in [`helix-term/src/commands.rs`](https://github.com/helix-editor/helix/blob/master/helix-term/src/commands.rs)
   at the invocation of `static_commands!` macro.
-* Typable commands: commands that can be executed from command mode (`:`), for
+Typable commands: commands that can be executed from command mode (`:`), for
+
   example `:write!`. See the [Commands](./commands.md) documentation for a
   list of available typeable commands or the `TypableCommandList` declaration in
   the source code at [`helix-term/src/commands/typed.rs`](https://github.com/helix-editor/helix/blob/master/helix-term/src/commands/typed.rs).
-* Macros: sequences of keys that are executed in order. These keybindings
+Macros: sequences of keys that are executed in order. These keybindings
+
   start with `@` and then list any number of keys to be executed. For example
   `@miw` can be used to select the surrounding word. For now, macro keybindings
   are not allowed in keybinding sequences due to limitations in the way that
@@ -26,8 +29,8 @@ To remap keys, create a `config.toml` file in your `helix` configuration
 directory (default `~/.config/helix` on Linux systems) with a structure like
 this:
 
-> 💡 To set a modifier + key as a keymap, type `A-X = ...` or  `C-X = ...` for Alt + X or Ctrl + X. Combine with Shift using a dash, e.g. `C-S-esc`. 
-> Within macros, wrap them in `<>`, e.g. `<A-X>` and `<C-X>` to distinguish from the `A` or `C` keys.
+💡 To set a modifier + key as a keymap, type `A-X = ...` or  `C-X = ...` for Alt + X or Ctrl + X. Combine with Shift using a dash, e.g. `C-S-esc`.
+Within macros, wrap them in `<>`, e.g. `<A-X>` and `<C-X>` to distinguish from the `A` or `C` keys.
 
 ```toml
 # At most one section each of 'keys.normal', 'keys.insert' and 'keys.select'
@@ -89,26 +92,42 @@ Cmd-s = ":write" # Cmd or Win or Meta and 's' to write
 
 Special keys are encoded as follows:
 
-| Key name         | Representation |
-| ---              | ---            |
-| Backspace        | `"backspace"`  |
-| Space            | `"space"`      |
-| Return/Enter     | `"ret"`        |
-| Left             | `"left"`       |
-| Right            | `"right"`      |
-| Up               | `"up"`         |
-| Down             | `"down"`       |
-| Home             | `"home"`       |
-| End              | `"end"`        |
-| Page Up          | `"pageup"`     |
-| Page Down        | `"pagedown"`   |
-| Tab              | `"tab"`        |
-| Delete           | `"del"`        |
-| Insert           | `"ins"`        |
-| Null             | `"null"`       |
-| Escape           | `"esc"`        |
-| Less Than (<)    | `"lt"`         |
-| Greater Than (>) | `"gt"`         |
+Backspace: `"backspace"`
+
+Space: `"space"`
+
+Return/Enter: `"ret"`
+
+Left: `"left"`
+
+Right: `"right"`
+
+Up: `"up"`
+
+Down: `"down"`
+
+Home: `"home"`
+
+End: `"end"`
+
+Page Up: `"pageup"`
+
+Page Down: `"pagedown"`
+
+Tab: `"tab"`
+
+Delete: `"del"`
+
+Insert: `"ins"`
+
+Null: `"null"`
+
+Escape: `"esc"`
+
+Less Than (<): `"lt"`
+
+Greater Than (>): `"gt"`
+
 
 Keys can be disabled by binding them to the `no_op` command.
 

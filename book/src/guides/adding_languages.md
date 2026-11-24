@@ -14,10 +14,10 @@ below.
    configuration, run the command `cargo xtask docgen` to update the
    [Language Support](../lang-support.md) documentation.
 
-> 💡 If you are adding a new Language Server configuration, make sure to update
-> the
-> [Language Server Wiki](https://github.com/helix-editor/helix/wiki/Language-Server-Configurations)
-> with the installation instructions.
+💡 If you are adding a new Language Server configuration, make sure to update
+the
+[Language Server Wiki](https://github.com/helix-editor/helix/wiki/Language-Server-Configurations)
+with the installation instructions.
 
 ## Grammar configuration
 
@@ -59,13 +59,17 @@ below.
 
 ## Common issues
 
-- If you encounter errors when running Helix after switching branches, you may
+If you encounter errors when running Helix after switching branches, you may
+
   need to update the tree-sitter grammars. Run the command `hx --grammar fetch`
   to fetch the grammars and `hx --grammar build` to build any out-of-date
   grammars.
-- If a parser is causing a segfault, or you want to remove it, make sure to
+If a parser is causing a segfault, or you want to remove it, make sure to
+
   remove the compiled parser located at `runtime/grammars/<name>.so`.
-- If you are attempting to add queries and Helix is unable to locate them, ensure that the environment variable `HELIX_RUNTIME` is set to the location of the `runtime` folder you're developing in.
-- Validate queries with `cargo xtask query-check [language]` (every query file
+If you are attempting to add queries and Helix is unable to locate them, ensure that the environment variable `HELIX_RUNTIME` is set to the location of the `runtime` folder you're developing in.
+
+Validate queries with `cargo xtask query-check [language]` (every query file
+
   must compile against the grammar). `highlight-check` and `indent-check`
   additionally run the real highlighter and indenter over the test fixtures catch mistakes.

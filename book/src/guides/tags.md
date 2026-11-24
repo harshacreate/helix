@@ -20,19 +20,28 @@ testing.
 Marks a node as a symbol definition. The following definition captures are
 recognized:
 
-| Capture name           |
-|---                     |
-| `definition.class`     |
-| `definition.constant`  |
-| `definition.enum`      |
-| `definition.field`     |
-| `definition.function`  |
-| `definition.interface` |
-| `definition.macro`     |
-| `definition.module`    |
-| `definition.section`   |
-| `definition.struct`    |
-| `definition.type`      |
+Capture name: `definition.class`
+
+Capture name: `definition.constant`
+
+Capture name: `definition.enum`
+
+Capture name: `definition.field`
+
+Capture name: `definition.function`
+
+Capture name: `definition.interface`
+
+Capture name: `definition.macro`
+
+Capture name: `definition.module`
+
+Capture name: `definition.section`
+
+Capture name: `definition.struct`
+
+Capture name: `definition.type`
+
 
 Captures outside this list are ignored by the symbol pickers, so map a
 language-specific construct onto the closest listed kind rather than inventing a

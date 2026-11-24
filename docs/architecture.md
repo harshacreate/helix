@@ -1,24 +1,32 @@
 
-| Crate           | Description                                                      |
-| -----------     | -----------                                                      |
-| helix-stdx      | Extensions to the standard library (similar to [`rust-analyzer`'s](https://github.com/rust-lang/rust-analyzer/blob/ea413f67a8f730b4211c09e103f8207c62e7dbc3/crates/stdx/Cargo.toml#L5)) |
-| helix-core      | Core editing primitives, functional.                             |
-| helix-lsp       | Language server client                                           |
-| helix-lsp-types | Language Server Protocol type definitions                        |
-| helix-dap       | Debug Adapter Protocol (DAP) client                              |
-| helix-event     | Primitives for defining and handling events within the editor    |
-| helix-loader    | Functions for building, fetching, and loading external resources |
-| helix-view      | UI abstractions for use in backends, imperative shell.           |
-| helix-term      | Terminal UI                                                      |
-| helix-tui       | TUI primitives, forked from tui-rs, inspired by Cursive          |
+helix-stdx: Extensions to the standard library (similar to [`rust-analyzer`'s](https://github.com/rust-lang/rust-analyzer/blob/ea413f67a8f730b4211c09e103f8207c62e7dbc3/crates/stdx/Cargo.toml#L5))
+
+helix-core: Core editing primitives, functional.
+
+helix-lsp: Language server client
+
+helix-lsp-types: Language Server Protocol type definitions
+
+helix-dap: Debug Adapter Protocol (DAP) client
+
+helix-event: Primitives for defining and handling events within the editor
+
+helix-loader: Functions for building, fetching, and loading external resources
+
+helix-view: UI abstractions for use in backends, imperative shell.
+
+helix-term: Terminal UI
+
+helix-tui: TUI primitives, forked from tui-rs, inspired by Cursive
 
 
 This document contains a high-level overview of Helix internals.
 
-> NOTE: Use `cargo doc --open` for API documentation as well as dependency
-> documentation.
+NOTE: Use `cargo doc --open` for API documentation as well as dependency
+documentation.
 
-## Core
+<a id="core"></a>
+Core
 
 The core contains basic building blocks used to construct the editor. It is
 heavily based on [CodeMirror 6](https://codemirror.net/6/docs/). The primitives
@@ -41,13 +49,14 @@ A transaction can be inverted to produce an undo. Selections and marks can be
 mapped over a transaction to translate to a position in the new text state after
 applying the transaction.
 
-> NOTE: `Transaction::change`/`Transaction::change_by_selection` is the main
-> interface used to generate text edits.
+NOTE: `Transaction::change`/`Transaction::change_by_selection` is the main
+interface used to generate text edits.
 
 `Syntax` is the interface used to interact with tree-sitter ASTs for syntax
 highlighting and other features.
 
-## View
+<a id="view"></a>
+View
 
 The `view` layer was supposed to be a frontend-agnostic imperative library that
 would build on top of `core` to provide the common editor logic. Currently it's
@@ -61,9 +70,9 @@ A `View` represents an open split in the UI. It holds the currently open
 document ID and other related state. Views encapsulate the gutter, status line,
 diagnostics, and the inner area where the code is displayed.
 
-> NOTE: Multiple views are able to display the same document, so the document
-> contains selections for each view. To retrieve, `document.selection()` takes
-> a `ViewId`.
+NOTE: Multiple views are able to display the same document, so the document
+contains selections for each view. To retrieve, `document.selection()` takes
+a `ViewId`.
 
 `Info` is the autoinfo box that shows hints when awaiting another key with bindings
 like `g` and `m`. It is attached to the viewport as a whole.
@@ -90,30 +99,33 @@ on top of one another. Hence we get a file picker displayed over the
 editor, etc.
 
 The `Editor` holds the global state: all the open documents, a tree
-representation of all the view splits, the configuration, and a registry of 
+representation of all the view splits, the configuration, and a registry of
 language servers. To open or close files, interact with the editor.
 
-## LSP
+<a id="lsp"></a>
+LSP
 
 A language server protocol client.
 
-## Term
+<a id="term"></a>
+Term
 
 The terminal frontend.
 
 The `main` function sets up a new `Application` that runs the event loop.
 
 `commands.rs` is probably the most interesting file. It contains all commands
-(actions tied to keybindings). 
+(actions tied to keybindings).
 
 `keymap.rs` links commands to key combinations.
 
-
-## TUI / Term
+<a id="tui--term"></a>
+TUI / Term
 
 TODO: document Component and rendering related stuff
 
-## Event
+<a id="event"></a>
+Event
 
 The `helix-event` crate defines primitives for defining and acting on events
 within the editor. "Events" cover things like opening, changing and closing of

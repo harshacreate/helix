@@ -9,28 +9,51 @@ To jump backward in the jumplist, use `Ctrl-o`; to go forward, use `Ctrl-i`. To 
 
 ### What makes a jump
 The following is a non-exhaustive list of which actions add a jump to the jumplist:
-- Switching buffers
-  - Using the buffer picker, going to the next/previous buffer
-  - Going to the last accessed/modified file
-  - Making a new file (`:new FILE`)
-  - Opening a file (`:open FILE`)
+Switching buffers
+
+Using the buffer picker, going to the next/previous buffer
+
+Going to the last accessed/modified file
+
+Making a new file (`:new FILE`)
+
+Opening a file (`:open FILE`)
+
     - Includes `:log-open`, `:config-open`, `:config-open-workspace`, `:tutor`
-  - Navigating by pickers, global search, or the file explorer
-  - `goto_file` (`gf`)
-- Big in-file movements
-  - `select_regex` (`s`)
-  - `split_regex` (`S`)
-  - `search` (`/`)
-  - `keep_selections` and `remove_selections` (`K` and `<A-K>`)
-  - `goto_file_start` (`gg`)
-  - `goto_file_end`
-  - `goto_last_line` (`ge`)
-  - `:goto 123` / `:123` / `123G`
-  - `goto_definition` (`gd`)
-  - `goto_declaration` (`gD`)
-  - `goto_type_definition` (`gy`)
-  - `goto_reference` (`gr`)
-- Other
-  - `Ctrl-s` manually creates a jump
-  - Trying to close a modified buffer can switch you to that buffer and create a jump
-  - The debugger can create jumps as you jump stack frames
+Navigating by pickers, global search, or the file explorer
+
+`goto_file` (`gf`)
+
+Big in-file movements
+
+`select_regex` (`s`)
+
+`split_regex` (`S`)
+
+`search` (`/`)
+
+`keep_selections` and `remove_selections` (`K` and `<A-K>`)
+
+`goto_file_start` (`gg`)
+
+`goto_file_end`
+
+`goto_last_line` (`ge`)
+
+`:goto 123` / `:123` / `123G`
+
+`goto_definition` (`gd`)
+
+`goto_declaration` (`gD`)
+
+`goto_type_definition` (`gy`)
+
+`goto_reference` (`gr`)
+
+Other
+
+`Ctrl-s` manually creates a jump
+
+Trying to close a modified buffer can switch you to that buffer and create a jump
+
+The debugger can create jumps as you jump stack frames

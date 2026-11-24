@@ -1,11 +1,13 @@
-## Checklist
+<a id="checklist"></a>
+Checklist
 
 Helix releases are versioned in the Calendar Versioning scheme:
 `YY.0M(.MICRO)`, for example, `22.05` for May of 2022, or in a patch release,
 `22.05.1`. In these instructions we'll use `<tag>` as a placeholder for the tag
 being published.
 
-* Merge the PR with the release updates. That branch should:
+Merge the PR with the release updates. That branch should:
+
     * Update the version:
         * Update the `workspace.package.version` key in `Cargo.toml`. Cargo only accepts
           SemVer versions so a CalVer version of `22.07` for example must be formatted
@@ -14,25 +16,33 @@ being published.
         * Run `cargo check` and commit the resulting change to `Cargo.lock`
     * Add changelog notes to `CHANGELOG.md`
     * Add new `<release>` entry in `contrib/Helix.appdata.xml` with release information according to the [AppStream spec](https://www.freedesktop.org/software/appstream/docs/sect-Metadata-Releases.html)
-* Tag and push
+Tag and push
+
     * Switch to master and pull
     * `git tag -s -m "<tag>" -a <tag> && git push origin <tag>` (note the `-s` which signs the tag)
-* Wait for the Release CI to finish
+Wait for the Release CI to finish
+
     * It will automatically turn the git tag into a GitHub release when it uploads artifacts
-* Edit the new release
+Edit the new release
+
     * Use `<tag>` as the title
     * Link to the changelog and release notes
-* Merge the release notes PR
-* Download the macos and linux binaries and update the `sha256`s in the [homebrew formula]
+Merge the release notes PR
+
+Download the macos and linux binaries and update the `sha256`s in the [homebrew formula]
+
     * Use `sha256sum` on the downloaded `.tar.xz` files to determine the hash
-* Link to the release notes in this-week-in-rust
+Link to the release notes in this-week-in-rust
+
     * [Example PR](https://github.com/rust-lang/this-week-in-rust/pull/3300)
-* Post to reddit
+Post to reddit
+
     * [Example post](https://www.reddit.com/r/rust/comments/uzp5ze/helix_editor_2205_released/)
 
 [homebrew formula]: https://github.com/Homebrew/homebrew-core/blob/master/Formula/h/helix.rb
 
-## Changelog Curation
+<a id="changelog-curation"></a>
+Changelog Curation
 
 The changelog is currently created manually by reading through commits in the
 log since the last release. GitHub's compare view is a nice way to approach
@@ -59,8 +69,8 @@ Not every PR or commit needs a blurb in the changelog. Each release section
 tends to have a blurb that links to a GitHub comparison between release
 versions for convenience:
 
-> As usual, the following is a summary of each of the changes since the last
-> release. For the full log, check out the git log.
+As usual, the following is a summary of each of the changes since the last
+release. For the full log, check out the git log.
 
 Typically, small changes like dependencies or documentation updates, refactors,
 or meta changes like GitHub Actions work are left out.

@@ -10,26 +10,26 @@ contributing to Helix.
 ## Scopes
 
 The full list of highlight scopes, and what each is for, is documented on the
-[themes page]. Match the most specific scope that fits the node — for example a
+[themes page]. Match the most specific scope that fits the node, for example a
 method call is `@function.method` while a plain field access is
 `@variable.other.member`.
 
 A query file may reuse another language's with `; inherits: <lang>` on the first
 line (for example `tsx` inherits `typescript`, which inherits `ecma`). An
-inherited file is compiled against *each* inheriting grammar, so every capture
+inherited file is compiled against each inheriting grammar, so every capture
 must be valid there too.
 
 ## Precedence
 
 Two rules decide which capture wins when more than one matches the same text:
 
-1. **Same span: last match wins.** Among captures covering the same bytes, the
-   pattern that appears later in the file wins. Put a generic rule *before* the
+1. Same span: last match wins. Among captures covering the same bytes, the
+   pattern that appears later in the file wins. Put a generic rule before the
    specific one that should override it.
-2. **Nested nodes: innermost wins.** When a parent and a child node both cover
+2. Nested nodes: innermost wins. When a parent and a child node both cover
    the text, the child's capture wins, regardless of file order.
 
-A common consequence of rule 2: capture the *leaf* you mean. A call captured on
+A common consequence of rule 2: capture the leaf you mean. A call captured on
 a wrapping node loses to a base `(identifier) @variable` on the inner identifier,
 so put `@function` on the identifier itself.
 

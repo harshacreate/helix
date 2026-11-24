@@ -8,25 +8,36 @@ function or block of code.
 ![Textobject demo](https://user-images.githubusercontent.com/23398472/124231131-81a4bb00-db2d-11eb-9d10-8e577ca7b177.gif)
 ![Textobject tree-sitter demo](https://user-images.githubusercontent.com/23398472/132537398-2a2e0a54-582b-44ab-a77f-eb818942203d.gif)
 
-- `ma` - Select around the object (`va` in Vim, `<alt-a>` in Kakoune)
-- `mi` - Select inside the object (`vi` in Vim, `<alt-i>` in Kakoune)
+`ma` - Select around the object (`va` in Vim, `<alt-a>` in Kakoune)
 
-| Key after `mi` or `ma` | Textobject selected      |
-| ---                    | ---                      |
-| `w`                    | Word                     |
-| `W`                    | WORD                     |
-| `p`                    | Paragraph                |
-| `(`, `[`, `'`, etc.    | Specified surround pairs |
-| `m`                    | The closest surround pair    |
-| `f`                    | Function                 |
-| `t`                    | Type (or Class)          |
-| `a`                    | Argument/parameter       |
-| `c`                    | Comment                  |
-| `T`                    | Test                     |
-| `g`                    | Change                   |
-| `x`                    | (X)HTML element          |
+`mi` - Select inside the object (`vi` in Vim, `<alt-i>` in Kakoune)
 
-> 💡 `f`, `t`, etc. need a tree-sitter grammar active for the current
+`w`: Word
+
+`W`: WORD
+
+`p`: Paragraph
+
+`(`, `[`, `'`, etc.: Specified surround pairs
+
+`m`: The closest surround pair
+
+`f`: Function
+
+`t`: Type (or Class)
+
+`a`: Argument/parameter
+
+`c`: Comment
+
+`T`: Test
+
+`g`: Change
+
+`x`: (X)HTML element
+
+
+💡 `f`, `t`, etc. need a tree-sitter grammar active for the current
 document and a special tree-sitter query file to work properly. [Only
 some grammars](./lang-support.md) currently have the query file implemented.
 Contributions are welcome!
@@ -43,6 +54,5 @@ type use `[t`, and so on.
 For the full reference see the [unimpaired](./keymap.md#unimpaired) section of the key bind
 documentation.
 
-> 💡 This feature relies on tree-sitter textobjects
-> and requires the corresponding query file to work properly.
-
+💡 This feature relies on tree-sitter textobjects
+and requires the corresponding query file to work properly.

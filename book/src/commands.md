@@ -1,7 +1,8 @@
 # Commands
 
-- [Typable commands](#typable-commands)
-- [Static commands](#static-commands)
+[Typable commands](#typable-commands)
+
+[Static commands](#static-commands)
 
 ## Typable commands
 

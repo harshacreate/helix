@@ -1,9 +1,12 @@
 # Command line
 
-- [Quoting](#quoting)
-- [Flags](#flags)
-- [Expansions](#expansions)
-- [Exceptions](#exceptions)
+[Quoting](#quoting)
+
+[Flags](#flags)
+
+[Expansions](#expansions)
+
+[Exceptions](#exceptions)
 
 The command line is used for executing [typable commands](./commands.md#typable-commands) like `:write` or `:quit`. Press `:` to activate the command line.
 
@@ -37,29 +40,40 @@ Expansions take the form `%[<kind>]<open><contents><close>`. In `%sh{echo hi!}`,
 
 To escape a percent character instead of treating it as an expansion, use two percent characters consecutively. To execute a shell command like `date -u +'%Y-%m-%d'`, double the percent characters: `:echo %sh{date -u +'%%Y-%%m-%%d'}`.
 
-When no `<kind>` is provided, Helix will expand a **variable**. For example `%{cursor_line}` can be used as in argument to insert the line number. `:echo %{cursor_line}` for instance may print `1` to the statusline.
+When no `<kind>` is provided, Helix will expand a variable. For example `%{cursor_line}` can be used as in argument to insert the line number. `:echo %{cursor_line}` for instance may print `1` to the statusline.
 
 The following variables are supported:
 
-| Name | Description |
-|---   |---          |
-| `cursor_line` | The line number of the primary cursor in the currently focused document, starting at 1. |
-| `cursor_column` | The column number of the primary cursor in the currently focused document, starting at 1. This is counted as the number of grapheme clusters from the start of the line rather than bytes or codepoints. |
-| `buffer_name` | The relative path of the currently focused document. `[scratch]` is expanded instead for scratch buffers. |
-| `file_path_absolute` | The absolute path of the currently focused document. For scratch buffers this will default to the current working directory. |
-| `line_ending` | A string containing the line ending of the currently focused document. For example on Unix systems this is usually a line-feed character (`\n`) but on Windows systems this may be a carriage-return plus a line-feed (`\r\n`). The line ending kind of the currently focused document can be inspected with the `:line-ending` command. |
-| `current_working_directory` | Current working directory |
-| `workspace_directory` | Nearest ancestor directory of the current working directory that contains `.git`, `.svn`, `jj` or `.helix` |
-| `language` | A string containing the language name of the currently focused document.|
-| `selection` | A string containing the contents of the primary selection of the currently focused document. |
-| `selection_line_start` | The line number of the start of the primary selection in the currently focused document, starting at 1. |
-| `selection_line_end` | The line number of the end of the primary selection in the currently focused document, starting at 1. |
+`cursor_line`: The line number of the primary cursor in the currently focused document, starting at 1.
+
+`cursor_column`: The column number of the primary cursor in the currently focused document, starting at 1. This is counted as the number of grapheme clusters from the start of the line rather than bytes or codepoints.
+
+`buffer_name`: The relative path of the currently focused document. `[scratch]` is expanded instead for scratch buffers.
+
+`file_path_absolute`: The absolute path of the currently focused document. For scratch buffers this will default to the current working directory.
+
+`line_ending`: A string containing the line ending of the currently focused document. For example on Unix systems this is usually a line-feed character (`\n`) but on Windows systems this may be a carriage-return plus a line-feed (`\r\n`). The line ending kind of the currently focused document can be inspected with the `:line-ending` command.
+
+`current_working_directory`: Current working directory
+
+`workspace_directory`: Nearest ancestor directory of the current working directory that contains `.git`, `.svn`, `jj` or `.helix`
+
+`language`: A string containing the language name of the currently focused document.
+
+`selection`: A string containing the contents of the primary selection of the currently focused document.
+
+`selection_line_start`: The line number of the start of the primary selection in the currently focused document, starting at 1.
+
+`selection_line_end`: The line number of the end of the primary selection in the currently focused document, starting at 1.
+
 
 Aside from editor variables, the following expansions may be used:
 
-* Unicode `%u{..}`. The contents may contain up to six hexadecimal numbers corresponding to a Unicode codepoint value. For example `:echo %u{25CF}` prints `●` to the statusline.
-* Shell `%sh{..}`. The contents are passed to the configured shell command. For example `:echo %sh{echo "20 * 5" | bc}` may print `100` on the statusline on when using a shell with `echo` and the `bc` calculator installed. Shell expansions are evaluated recursively. `%sh{echo '%{buffer_name}:%{cursor_line}'}` for example executes a command like `echo 'README.md:1'`: the variables within the `%sh{..}` expansion are evaluated before executing the shell command.
-* Register `%reg{..}`. The contents should be a single character representing the register name. For example, `:set-register a hello world` followed by `echo %reg{a}` prints `hello world` to the statusline.
+Unicode `%u{..}`. The contents may contain up to six hexadecimal numbers corresponding to a Unicode codepoint value. For example `:echo %u{25CF}` prints `●` to the statusline.
+
+Shell `%sh{..}`. The contents are passed to the configured shell command. For example `:echo %sh{echo "20 * 5" | bc}` may print `100` on the statusline on when using a shell with `echo` and the `bc` calculator installed. Shell expansions are evaluated recursively. `%sh{echo '%{buffer_name}:%{cursor_line}'}` for example executes a command like `echo 'README.md:1'`: the variables within the `%sh{..}` expansion are evaluated before executing the shell command.
+
+Register `%reg{..}`. The contents should be a single character representing the register name. For example, `:set-register a hello world` followed by `echo %reg{a}` prints `hello world` to the statusline.
 
 As mentioned above, double quotes can be used to surround arguments containing spaces but also support expansions within the quoted content unlike single quotes or backticks. For example `:echo "circle: %u{25CF}"` prints `circle: ●` to the statusline while `:echo 'circle: %u{25CF}'` prints `circle: %u{25CF}`.
 
@@ -69,11 +83,15 @@ Note that expansions are only evaluated once the Enter key is pressed in command
 
 The following commands support expansions but otherwise pass the given argument directly to the shell program without interpreting quotes:
 
-* `:insert-output`
-* `:append-output`
-* `:pipe`
-* `:pipe-to`
-* `:run-shell-command`
+`:insert-output`
+
+`:append-output`
+
+`:pipe`
+
+`:pipe-to`
+
+`:run-shell-command`
 
 For example executing `:sh echo "%{buffer_name}:%{cursor_column}"` would pass text like `echo "README.md:1"` as an argument to the shell program: the expansions are evaluated but not the quotes. As mentioned above, percent characters can be used in shell commands by doubling the percent character. To insert the output of a command like `date -u +'%Y-%m-%d'` use `:insert-output date -u +'%%Y-%%m-%%d'`.
 
@@ -81,9 +99,11 @@ The `:set-option` and `:toggle-option` commands use regular parsing for the firs
 
 `:toggle-option`'s behavior depends on the JSON type of the config option supplied as the first argument:
 
-* Booleans: only the config option name should be provided. For example `:toggle-option auto-format` will flip the `auto-format` option.
-* Strings: the rest of the command line is parsed with regular quoting rules. For example `:toggle-option indent-heuristic hybrid tree-sitter simple` cycles through "hybrid", "tree-sitter" and "simple" values on each invocation of the command.
-* Numbers, arrays and objects: the rest of the command line is parsed as a stream of JSON values. For example `:toggle-option rulers [81] [51, 73]` cycles through `[81]` and `[51, 73]`.
+Booleans: only the config option name should be provided. For example `:toggle-option auto-format` will flip the `auto-format` option.
+
+Strings: the rest of the command line is parsed with regular quoting rules. For example `:toggle-option indent-heuristic hybrid tree-sitter simple` cycles through "hybrid", "tree-sitter" and "simple" values on each invocation of the command.
+
+Numbers, arrays and objects: the rest of the command line is parsed as a stream of JSON values. For example `:toggle-option rulers [81] [51, 73]` cycles through `[81]` and `[51, 73]`.
 
 When providing multiple values to `:toggle-option` there should be no duplicates. `:toggle-option indent-heuristic hybrid simple tree-sitter simple` for example would only toggle between "hybrid" and "tree-sitter" values.
 
