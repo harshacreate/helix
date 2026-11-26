@@ -529,5 +529,5 @@ These scopes are used for theming the editor interface:
 `tabstop`: Snippet placeholder
 
 
-[editor-section]: ./configuration.md#editor-section
+[editor-section]: ./editor.md#editor
 [#2380]: https://github.com/helix-editor/helix/issues/2380
